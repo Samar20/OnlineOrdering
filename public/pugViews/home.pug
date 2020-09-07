@@ -1,0 +1,25 @@
+html
+    head
+        title Home Page
+        style(type='text/css').
+         body { background: darksalmon !important; }
+
+
+body(onload = 'init()')
+    if(auth == true )
+        include ./headerLog
+        
+           |
+           a(href="/users/"+log._id) Profile
+           |
+           input#logout(type='submit', value='logout')
+           |
+    else
+        include ./headerNlog
+
+    div#main
+        h1 Welcome Order Right Home Page!
+    
+    if(auth == true)
+        script(src='../logout.js')
+    

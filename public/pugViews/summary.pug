@@ -1,0 +1,33 @@
+html
+    head
+        title Order Summary
+        style(type='text/css').
+         body { background: darksalmon !important; }
+
+
+body(onload = 'init()')
+    if(auth == true)
+        include ./headerLog
+         a(href="/users/"+log._id) Profile
+         |
+         input#logout(type='submit', value='logout')
+         |
+    else
+        include ./headerNlog
+
+    div#main
+            h1 Order number: #{order._id}
+
+            p Restaurant Name: #{order.restaurant}
+            p Placed by: #{order.username}
+
+            p Order contents:
+            for item in order.order[0]
+             ul #{item.name} 
+             ul Quantity: #{item.quantity}
+
+            p Subtotal: #{order.subtotal}
+            p Tax: #{order.tax}
+            p Delivery Fee: #{order.fee}
+            p Total: #{order.total}
+    script(src='../logout.js')

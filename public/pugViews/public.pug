@@ -1,0 +1,29 @@
+html
+    head
+        title Profile
+        style(type='text/css').
+         body { background: darksalmon !important; }
+
+
+body(onload = 'init()')
+
+    if(auth == true)
+        include ./headerLog
+         a(href="/users/"+log._id) Profile
+         |
+         input#logout(type='submit', value='logout')
+         |
+    else
+        include ./headerNlog
+
+
+    div#main
+
+            h1 Profile for: #{users.username}
+            
+            p Order History: 
+            for item in users.orders
+             ul 
+                 a(href= '/orders/' + item) #{item}
+    if(auth == true)
+        script(src='../logout.js')

@@ -1,0 +1,35 @@
+html
+    head
+        title Profile
+        style(type='text/css').
+         body { background: darksalmon !important; }
+
+
+body(onload='init()')
+
+    include ./headerLog
+      a(href="/users/"+users._id) Profile
+      |
+      input#logout(type='submit', value='logout')
+      |
+    
+
+    div#main
+
+            h1 Profile for: #{users.username}
+
+            form
+                |Private mode
+                
+                input#on(type='radio', name='on')
+                |On
+                    
+                input#off(type='radio', name='off')
+                |Off
+                
+                input#save(type='submit', value='save')
+            p Order History: 
+            for item in users.orders
+             ul 
+              a(href= '/orders/' + item) #{item}
+    script(src='../logout.js')

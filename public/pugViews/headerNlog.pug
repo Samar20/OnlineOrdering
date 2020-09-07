@@ -1,0 +1,22 @@
+body(onload = 'init()')
+	div#header
+		a(href="/") Home 
+		| 
+		a(href="/users") Users
+		| 
+		a(href="/register") Register
+		| 
+		|
+		b 
+		label(for='name') Username:
+			input#name(type='text', name='name', required)
+		b 
+		b
+		b
+		label(for='pass') Password:
+			input#pass(type='password', name='pass', required)
+		|
+		|
+		input#login(type='submit', value='login')
+		|
+	script(src='../login.js')

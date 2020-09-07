@@ -1,0 +1,26 @@
+html
+  head
+    style(type='text/css').
+         body { background: darksalmon !important; }
+  body(onload='init()')
+    if(auth == true)
+        include ./headerLog
+         a(href="/users/"+log._id) Profile
+         |
+         input#logout(type='submit', value='logout')
+         |
+    else
+        include ./headerNlog
+
+    h1 Register
+    #info
+      label(for='name1') Username:
+      input#name1(type='text', name='name', required)
+      br
+      br
+      label(for='pass1') Password:
+      input#pass1(type='password', name='pass',required)
+      br
+      br
+      input#register(type='submit', value='Register')
+    script(src='../register.js')

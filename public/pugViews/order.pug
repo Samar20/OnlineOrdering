@@ -1,0 +1,35 @@
+html
+  head
+    title Order Form
+    style.
+      .column {
+      float: left;
+      }
+      .left{
+      width: 10%;
+      }
+      .right {
+      width: 25%;
+      }
+      .middle {
+      width: 65%;
+      }
+      body { 
+        background: darksalmon !important; 
+        }
+  body(onload='init()')
+    include ./headerLog
+        |
+        a(href="/users/"+ log._id) Profile
+        |
+        input#logout(type='submit', value='logout')
+        |
+    select#restaurant-select
+    br
+    br
+    #info
+    #main
+      #left.column.left
+      #middle.column.middle
+      #right.column.right
+    script(src='../orderform.js')

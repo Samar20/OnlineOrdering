@@ -1,0 +1,26 @@
+html
+    head
+        title List of Users
+        style(type='text/css').
+         body { background: darksalmon !important; }
+
+
+body(onload = 'init()')
+
+    if(auth == true)
+        include ./headerLog
+        |
+        a(href="/users/"+ log._id) Profile
+        |
+        input#logout(type='submit', value='logout')
+        |  
+    else
+        include ./headerNlog
+
+
+    div#main
+        for item in users
+            ul
+                a(href= '/users/' + item._id) #{item.username}
+    if(auth==true)
+        script(src='../logout.js')
