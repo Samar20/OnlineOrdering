@@ -1,5 +1,5 @@
 Name: Samar Hussein
-Student ID: 101105020
+
 
 - once the zip folder is downloaded unzip and in the terminal run npm install and all the node modules should install
 - then run the daemon with the database to be store in the data folder
@@ -19,4 +19,4 @@ Student ID: 101105020
 
 
 
-- Credit is given to  the author/s of the file orderform.js and the orderform.html which has been changed to a pug file
+- Credit is given to  the author/s Dave Mckenney of the file orderform.js and the orderform.html which has been changed to a pug file
